@@ -1,6 +1,22 @@
+# Definindo nosso environment do app
+# setup:
+#   addons:
+#     - plan: heroku-postgresql
+#       as: DATABASE
+
+# Especifica o dockerfile que irá gerar a imagem
 build:
   docker:
     web: Dockerfile
+    # worker: worker/Dockerfile
 
+# Especifica as tarefas da fase de libertação a serem executadas
+# release:
+#   command:
+#     - ./deployment-task.sh
+#     image: worker
+
+# Especifica os tipos de processo e comandos a serem utilizados, caso vazio usa o CMD
 # run:
 #   web: node index.js
+
